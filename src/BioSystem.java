@@ -165,18 +165,20 @@ public class BioSystem {
             //deaths
             microhabitats[i].removeNBacteria(death_allocations[i]);
             //migrations
-            if(i==0){
-                microhabitats[i].removeNBacteria(migration_allocations[i]);
-                microhabitats[i+1].addNBacteria(migration_allocations[i]);
-            }else if(i==(L-1)){
-                microhabitats[i].removeNBacteria(migration_allocations[i]);
-                microhabitats[i-1].addNBacteria(migration_allocations[i]);
-            }else{
-                int left_migrants = rand.nextInt(migration_allocations[i]);
-                int right_migrants = migration_allocations[i] - left_migrants;
-                microhabitats[i].removeNBacteria(migration_allocations[i]);
-                microhabitats[i-1].addNBacteria(left_migrants);
-                microhabitats[i+1].addNBacteria(right_migrants);
+            if(migration_allocations[i] > 0){
+                if(i==0){
+                    microhabitats[i].removeNBacteria(migration_allocations[i]);
+                    microhabitats[i+1].addNBacteria(migration_allocations[i]);
+                }else if(i==(L-1)){
+                    microhabitats[i].removeNBacteria(migration_allocations[i]);
+                    microhabitats[i-1].addNBacteria(migration_allocations[i]);
+                }else{
+                    int left_migrants = rand.nextInt(migration_allocations[i]);
+                    int right_migrants = migration_allocations[i] - left_migrants;
+                    microhabitats[i].removeNBacteria(migration_allocations[i]);
+                    microhabitats[i-1].addNBacteria(left_migrants);
+                    microhabitats[i+1].addNBacteria(right_migrants);
+                }
             }
         }
 
