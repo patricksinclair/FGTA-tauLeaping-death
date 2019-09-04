@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.Random;
 
 public class FGTAMain {
     public static void main(String[] args){
