@@ -20,7 +20,7 @@ public class Toolbox {
             FileWriter fw = new FileWriter(file.getAbsoluteFile());
             BufferedWriter bw = new BufferedWriter(fw);
 
-            int string_length = 6;
+            int string_length = 15;
 
 
             // this writes a header with time and indexes

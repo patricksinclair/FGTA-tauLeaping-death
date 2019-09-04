@@ -1,0 +1,3 @@
+#!/bin/bash
+javac -cp ".:java_jars/*" *.java
+nohup java -cp ".:java_jars/*" FGTAMain &> nutrients_log.out&

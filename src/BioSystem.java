@@ -230,9 +230,9 @@ public class BioSystem {
 
         BioSystem bs = new BioSystem(L, S, alpha);
 
-        while(bs.time_elapsed <= duration){
+        while(bs.time_elapsed <= duration+0.2*interval){
 
-            if(bs.time_elapsed%interval < 0.0001 && !alreadyRecorded){
+            if(bs.time_elapsed%interval < 0.01 && !alreadyRecorded){
                 System.out.println("rep: "+i+"\tt: "+bs.time_elapsed);
                 t_vals[sampleCounter] = bs.time_elapsed;
                 alive_distbs[sampleCounter] = bs.getLiveSpatialDistributionArray();
@@ -246,6 +246,7 @@ public class BioSystem {
 
             bs.performAction();
         }
+
 
         return new Databox(t_vals, alive_distbs, dead_distbs, gRate_distbs);
     }
