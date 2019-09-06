@@ -204,7 +204,7 @@ public class BioSystem {
         int L = 500, S = 500;
         int nSamples = 20, nReps = 32;
 
-        double duration = 200.;
+        double duration = 400.;
 
         String directory_name = "results";
         String filename_alive = "FGTA-death-alpha="+String.format("%.6f", input_alpha)+"-alive-distb";
